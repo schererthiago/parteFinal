@@ -6,11 +6,12 @@ export const Cabecalho = styled.header`
     align-items: center;
     padding: 20px;
     background-color: #1B3152;
+    height: 8vh;
 `
 
 export const LogoHeader = styled.img`
-    width: 70px;
-    height: 70px;
+    width: 74px;
+    height: 74px;
 `
 
 export const Nav = styled.nav`

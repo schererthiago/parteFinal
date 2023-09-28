@@ -1,11 +1,11 @@
 import { Cabecalho, LogoHeader, Opcoes, Lista, Link, BotaoLogin, BotaoCadastrar, Nav, Botoes } from "./styled"
 import Logo from "../../Assets/logo.png";
 
-function Header() {
+function HeaderLogin() {
     return (
         <>
             <Cabecalho>
-                <LogoHeader img={Logo} />
+                <LogoHeader src={Logo}/>
                 <Nav>
                     <Opcoes>
                         <Lista><Link href="#">Sobre</Link>
@@ -24,4 +24,4 @@ function Header() {
     )
 }
 
-export default Header;
+export default HeaderLogin;

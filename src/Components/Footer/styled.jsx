@@ -5,9 +5,9 @@ export const Rodape = styled.footer`
     color: #fff;
     text-align: center;
     padding: 20px 0;
-    bottom: 0;
-    width: 100vw;
-    position: fixed;
+    /* bottom: 0; */
+    /* width: 100vw; */
+    /* position: fixed; */
 `
 export const Infos = styled.p`
     font-size: 16px;
