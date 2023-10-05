@@ -88,3 +88,13 @@ export const FooterCard = styled.div`
     align-items: center;
     gap: 0.5vw;
 `
+
+export const BotaoVer = styled.button`
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+`

@@ -1,6 +1,5 @@
 import { Rodape, Infos, Instagram, Linkdin, Links } from "../Footer/styled";
 
-
 function Footer() {
 
     const FuncaoLinks = (link)=>{

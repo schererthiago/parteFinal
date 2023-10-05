@@ -45,21 +45,3 @@ export const BtnSair = styled.button`
     border-radius: 5px;
     cursor: pointer;
 `
-
-export const BtnPerfil = styled.button`
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-`
-
-export const BtnPubli = styled.button`
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-`

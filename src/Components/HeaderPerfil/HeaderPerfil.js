@@ -1,7 +1,6 @@
-import { Cabecalho, LogoHeader, Opcoes, Lista, Link, Nav, Botao, BtnPerfil, BtnPubli, BtnSair } from "./styled";
-import Logo from "../../Assets/logo.png";
 
-function HeaderLogado() {
+
+function HeaderPerfil() {
     return (
         <>
             <Cabecalho>
@@ -16,13 +15,9 @@ function HeaderLogado() {
                     </Opcoes>
                 </Nav>
                 <Botao>
-                    <BtnPerfil>Meu perfil</BtnPerfil>
-                    <BtnPubli>Publicar</BtnPubli>
                     <BtnSair>Sair</BtnSair>
                 </Botao>
             </Cabecalho>
         </>
     )
 }
-
-export default HeaderLogado;

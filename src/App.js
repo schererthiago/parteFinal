@@ -1,4 +1,7 @@
+import Publicacao from "./Cards/Publicacao/Publicacao";
 import HeaderLogado from "./Components/HeaderLogado/HeaderLogado";
+import Footer from "./Components/Footer/Footer";
+import InfosPerfil from "./Components/InfosPerfil/InfosPerfil";
 import { GlobalStyle } from "./Globalstyled";
 
 function App() {
@@ -6,6 +9,8 @@ function App() {
     <>
     <GlobalStyle/>
     <HeaderLogado/>
+    <Publicacao/>
+    <Footer/>
     </>
   );
 }

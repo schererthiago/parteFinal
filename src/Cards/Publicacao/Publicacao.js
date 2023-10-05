@@ -1,4 +1,4 @@
-import { Publi, Barra, Container, Descricao, FooterCard, ImagemPerfil, InfPerfil, Nome, Perfil, Tempo, Titulo } from "./styled"
+import { Publi, Barra, Container, Descricao, FooterCard, ImagemPerfil, InfPerfil, Nome, Perfil, Tempo, Titulo, BotaoVer } from "./styled"
 import ImgPerfil from "../../Assets/fotoPerfil.png"
 
 function Publicacao(props) {
@@ -22,6 +22,7 @@ function Publicacao(props) {
                     históricas e promover a representatividade.
                 </Descricao>
                 <FooterCard>
+                    <BotaoVer>Ver discussão</BotaoVer>
                 </FooterCard>
             </Container>
         </>
