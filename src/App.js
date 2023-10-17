@@ -4,14 +4,14 @@ import Footer from "./Components/Footer/Footer";
 import InfosPerfil from "./Components/InfosPerfil/InfosPerfil";
 import { GlobalStyle } from "./Globalstyled";
 import Rotas from "./rotas/Rotas";
+import Discussao from "./Pages/Discussao/Discussao";
+import Home from "./Pages/Home/Home";
 
 function App() {
   return (
     <>
     <GlobalStyle/>
-    {/* <HeaderLogado/>
-    <Publicacao/>
-    <Footer/> */}
+
     <Rotas/>
     </>
   );

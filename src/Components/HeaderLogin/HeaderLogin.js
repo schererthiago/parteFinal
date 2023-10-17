@@ -20,7 +20,7 @@ function HeaderLogin() {
                     </Opcoes> */}
                 </Nav>
                 <Botoes>
-                    <BotaoLogin onClick={()=>{navigate('/sobre')}}>Login</BotaoLogin>
+                    <BotaoLogin onClick={()=>{navigate('/LoginModal')}}>Login</BotaoLogin>
                     <BotaoCadastrar>Cadastrar-se</BotaoCadastrar>
                 </Botoes>
             </Cabecalho>
