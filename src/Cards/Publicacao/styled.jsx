@@ -11,17 +11,6 @@ export const Container = styled.div`
     background: #18273F;
 `
 
-export const Titulo = styled.p`
-    width: auto;
-    color: white;
-    font-family: Poppins;
-    font-size: 22px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    margin: 0;
-`
-
 export const Barra = styled.div`
     width: auto;
     height: 8.5vh;

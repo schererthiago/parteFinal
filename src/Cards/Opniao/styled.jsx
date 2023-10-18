@@ -5,21 +5,10 @@ export const Container = styled.div`
     flex-direction: column;
     padding: 4vh;
     gap: 3.5vh;
-    width: 60vw;
-    height: 40vh;
+    width: 50vw;
+    height: 31vh;
     border-radius: 10px;
     background: #18273F;
-`
-
-export const Titulo = styled.p`
-    width: auto;
-    color: white;
-    font-family: Poppins;
-    font-size: 22px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    margin: 0;
 `
 
 export const Barra = styled.div`

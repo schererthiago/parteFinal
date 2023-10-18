@@ -1,11 +1,10 @@
-import { Publi, Barra, Container, Descricao, FooterCard, ImagemPerfil, InfPerfil, Nome, Perfil, Tempo, Titulo, BtnResponder } from "./styled";
+import { Publi, Barra, Container, Descricao, FooterCard, ImagemPerfil, InfPerfil, Nome, Perfil, Tempo, BtnResponder } from "./styled";
 import ImgPerfil from "../../Assets/fotoPerfil.png";
 
 const Opniao = () => {
     return (
         <>
             <Container>
-                <Titulo>Assunto tal</Titulo>
                 <Barra>
                     <Perfil>
                         <ImagemPerfil src={ImgPerfil} />
@@ -13,7 +12,7 @@ const Opniao = () => {
                             <Nome>Fulano</Nome>
                         </InfPerfil>
                     </Perfil>
-                    <Tempo>Há 2 dias</Tempo>
+                    {/* <Tempo>Há 2 dias</Tempo> */}
                 </Barra>
                 <Descricao>
                     Cotas raciais no mundo do trabalho visam promover a inclusão de grupos marginalizados,

@@ -1,11 +1,10 @@
-import { Publi, Barra, Container, Descricao, FooterCard, ImagemPerfil, InfPerfil, Nome, Perfil, Tempo, Titulo, BotaoVer } from "./styled"
+import { Publi, Barra, Container, Descricao, FooterCard, ImagemPerfil, InfPerfil, Nome, Perfil, Tempo, BotaoVer } from "./styled"
 import ImgPerfil from "../../Assets/fotoPerfil.png"
 
 function Publicacao(props) {
     return (
         <>
             <Container onClick={props.ir}>
-                <Titulo>Assunto tal</Titulo>
                 <Barra>
                     <Perfil>
                         <ImagemPerfil src={ImgPerfil} />
@@ -16,10 +15,7 @@ function Publicacao(props) {
                     <Tempo>Há 2 dias</Tempo>
                 </Barra>
                 <Descricao>
-                    Cotas raciais no mundo do trabalho visam promover a inclusão de grupos marginalizados,
-                    mas enfrentam críticas por privilegiar determinados grupos em detrimento de outros.
-                    Defensores destacam sua importância como medida temporária para reparar desigualdades
-                    históricas e promover a representatividade.
+                Lorem ipsum dolor sit amet. Et expedita explicabo ea dolore nihil nam voluptatum galisum non ducimus doloribus eos esse tempore. 33 voluptas perferendis rem consectetur cumque sit harum excepturi ab pariatur beatae qui earum quibusdam aut labore corrupti rem sequi Quis! Est galisum quia ut saepe ratione quo tempore eaque a voluptas voluptatem.
                 </Descricao>
                 <FooterCard>
                     <BotaoVer>Ver discussão</BotaoVer>
