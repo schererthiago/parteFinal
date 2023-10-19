@@ -12,7 +12,7 @@ function Rotas(){
             <Route index element={<Home/>}/>
             <Route path="sobre" element={ <Sobre/>}/>
             <Route path='objetivo' element={<Objetivos/>}/>
-            <Route path='LoginModal' element={<LoginModal/>}/>
+            {/* <Route path='/LoginModal' element={<LoginModal/>}/> */}
         </Routes>
         </BrowserRouter>
     )

@@ -54,3 +54,70 @@ export const BotaoCadastrar = styled.button`
     border-radius: 5px;
     cursor: pointer;
 `
+
+
+
+
+//modal 
+export const Modal = styled.div`
+  /* display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #123;
+  z-index: 1;
+  justify-content: center;
+  align-items: center; */
+`
+
+export const Conteudo = styled.div`
+  background-color: #333;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 8%;
+  height: 49vh;
+  width: 14vw;
+  text-align: center;
+  position: relative;
+  justify-content: center;
+`
+
+export const Escrita = styled.h2`
+  color: #fff;
+`
+
+export const Dados = styled.input`
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+`
+  
+export const BotaoLog = styled.button`
+  background-color: #2980b9;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px 0;
+`
+export const BotaoCreate = styled.button`
+  background-color: #2980b9;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px 0;
+`
+
+export const Fechar = styled.span`
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  color: #fff;
+`
