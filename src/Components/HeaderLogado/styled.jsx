@@ -19,7 +19,7 @@ export const Nav = styled.nav`
 `
 
 export const Botao = styled.div`
-
+    margin: 10px;
 `
 
 export const Opcoes = styled.ul`
@@ -38,28 +38,42 @@ export const Link = styled.a`
 `
 
 export const BtnSair = styled.button`
-    padding: 10px 20px;
+    padding: 7px 10px;
     background-color: #007bff;
     color: #fff;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
 `
 
 export const BtnPerfil = styled.button`
-    padding: 10px 20px;
+    padding: 7px 9px;
     background-color: #007bff;
     color: #fff;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
+    padding-left: ;
 `
 
 export const BtnPubli = styled.button`
-    padding: 10px 20px;
+    padding: 7px 8px;
     background-color: #007bff;
     color: #fff;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
+    margin: 0 12px;
+`
+
+export const BotaoFecharModal = styled.button`
+
+`
+
+export const Modal = styled.div`
+
+`
+
+export const ConteudoModal = styled.div`
+
 `

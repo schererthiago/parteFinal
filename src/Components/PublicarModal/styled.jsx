@@ -17,8 +17,8 @@ export const Conteudo = styled.div`
   background-color: #000;
   border: 1px solid #ccc;
   border-radius: 5px;
-  padding: 20px;
-  width: 300px;
+  padding: 70px;
+  width: 480px;
   text-align: center;
   position: relative;
 `;

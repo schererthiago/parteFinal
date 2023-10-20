@@ -1,3 +1,4 @@
+import { ChakraProvider } from '@chakra-ui/react'
 import Publicacao from "./Cards/Publicacao/Publicacao";
 import HeaderLogado from "./Components/HeaderLogado/HeaderLogado";
 import Footer from "./Components/Footer/Footer";
@@ -10,9 +11,12 @@ import Home from "./Pages/Home/Home";
 function App() {
   return (
     <>
-    <GlobalStyle/>
+    <ChakraProvider>
 
-    <Rotas/>
+      <GlobalStyle/>
+      <Rotas/>
+
+    </ChakraProvider>
     </>
   );
 }
