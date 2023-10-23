@@ -3,15 +3,22 @@ import Footer from "../../Components/Footer/Footer";
 import HeaderLogin from "../../Components/HeaderLogin/HeaderLogin";
 import { Publi } from "./styled";
 import HeaderLogado from "../../Components/HeaderLogado/HeaderLogado";
+import { useNavigate } from "react-router-dom";
 
 
 const Home = () => {
 
+    const navigate = useNavigate()
+
+    const goToLogin = ()=>{
+        navigate('login')
+    }
+
     return (
 
         <>
-            {/* <HeaderLogin/> */}
-            <HeaderLogado/>
+            <HeaderLogin/>
+            {/* <HeaderLogado/> */}
             <Publi>
                 <Publicacao />
                 <Publicacao />

@@ -6,12 +6,12 @@ import ReactModal from 'react-modal';
 //import LoginModal from "../../Components/LoginModal/LoginModal";
 
 function HeaderLogin() {
-    const [modalIsOpen, setModalIsOpen] = useState(false);
+    // const [modalIsOpen, setModalIsOpen] = useState(false);
 
-    const closeModal = () => setModalIsOpen(false);
-    const openModal = () => setModalIsOpen(true);
+    // const closeModal = () => setModalIsOpen(false);
+    // const openModal = () => setModalIsOpen(true);
 
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
     return (
         <>
@@ -20,35 +20,9 @@ function HeaderLogin() {
                 <Nav>
                 </Nav>
                 <Botoes >
-                    <BotaoLogin onClick={ openModal }>Login</BotaoLogin>
+                    <BotaoLogin>Login</BotaoLogin>
                     <BotaoCadastrar>Cadastrar-se</BotaoCadastrar>
                 </Botoes>
-
-                <ReactModal 
-                    isOpen={ modalIsOpen } 
-                    onRequestClose={ closeModal }
-                >
-                    <Conteudo>
-                        <Fechar onClick={closeModal}>
-                        &times;
-                        </Fechar>
-                        <Escrita>Login</Escrita>
-                        <Dados
-                        type="text"
-                        placeholder="E-mail"
-                        // value={email}
-                        // onChange={(e) => setEmail(e.target.value)}
-                        />
-                        <Dados
-                        type="password"
-                        placeholder="Senha"
-                        // value={password}
-                        // onChange={(e) => setPassword(e.target.value)}
-                        />
-                        <BotaoLog /*onClick={handleLogin}*/>Entrar</BotaoLog>
-                        <BotaoCreate /*onClick={onCreateAccountClick}*/>Criar conta</BotaoCreate>
-                    </Conteudo>
-                </ReactModal>
 
             </Cabecalho>
         </>

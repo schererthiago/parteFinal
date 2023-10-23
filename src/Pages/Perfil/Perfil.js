@@ -3,7 +3,7 @@ import HeaderLogado from "../../Components/HeaderLogado/HeaderLogado";
 import InfosPerfil from "../../Components/InfosPerfil/InfosPerfil";
 
 
-const Perfil =(){
+function Perfil() {
     return(
         <>
         <HeaderLogado/>

@@ -2,7 +2,10 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "../Pages/Home/Home";
 import Sobre from "../Pages/Sobre/Sobre";
 import Objetivos from "../Pages/Objetivos/Objetivos";
-import LoginModal from "../Components/LoginModal/LoginModal";
+import Perfil from "../Pages/Perfil/Perfil";
+import Login from "../Pages/Login/Login";
+import Cadastro from "../Pages/Cadastro/Cadastro";
+import HomeLogado from "../Pages/HomeLogado/HomeLogado";
 
 function Rotas(){
 
@@ -10,9 +13,12 @@ function Rotas(){
         <BrowserRouter>
         <Routes>
             <Route index element={<Home/>}/>
-            <Route path="sobre" element={ <Sobre/>}/>
+            <Route path='homelogado' element={<HomeLogado/>}/>
+            <Route path='sobre' element={<Sobre/>}/>
             <Route path='objetivo' element={<Objetivos/>}/>
-            {/* <Route path='/LoginModal' element={<LoginModal/>}/> */}
+            <Route path='perfil' element={<Perfil/>}/>
+            <Route path='login' element={<Login/>}/>
+            <Route path='cadastro' element={<Cadastro/>}/>
         </Routes>
         </BrowserRouter>
     )

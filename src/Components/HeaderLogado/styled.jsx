@@ -43,6 +43,7 @@ export const BtnSair = styled.button`
     color: #fff;
     border: none;
     border-radius: 10px;
+    font-size: 12px;
     cursor: pointer;
 `
 
@@ -53,7 +54,8 @@ export const BtnPerfil = styled.button`
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    padding-left: ;
+    font-size: 12px;
+    /* padding-left: ; */
 `
 
 export const BtnPubli = styled.button`
@@ -64,6 +66,7 @@ export const BtnPubli = styled.button`
     border-radius: 10px;
     cursor: pointer;
     margin: 0 12px;
+    font-size: 12px;
 `
 
 export const BotaoFecharModal = styled.button`
