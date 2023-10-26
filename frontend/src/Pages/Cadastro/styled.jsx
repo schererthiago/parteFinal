@@ -6,7 +6,7 @@ export const RegisterPageContainer = styled.div`
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: #f0f0f0;
+  background-color: #151F32;
 `;
 
 export const RegisterBox = styled.div`
@@ -15,20 +15,24 @@ export const RegisterBox = styled.div`
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   width: 300px;
+  background: #000000;
 `;
 
 export const RegisterTitle = styled.h1`
   text-align: center;
+  color: white;
 `;
 
 export const FormField = styled.div`
   margin: 10px 0;
+  color: white;
   label {
     display: block;
     margin-bottom: 5px;
   }
   input {
     width: 100%;
+    height: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -38,9 +42,9 @@ export const FormField = styled.div`
 export const RegisterButton = styled.button`
   background-color: #007bff;
   color: #fff;
-  padding: 10px 20px;
+  padding: 3px 10px;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
   &:hover {
     background-color: #0056b3;
