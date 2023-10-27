@@ -58,7 +58,7 @@ const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </FormField>
-        <Button onClick={handleLogin}>Login</Button>
+        <Button type="submit">Login</Button>
         <Button>Criar Conta</Button>
       </LoginBox>
     </LoginPageContainer>

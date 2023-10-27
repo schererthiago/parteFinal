@@ -5,7 +5,7 @@ export const Publi = styled.div`
     align-items: center;
     display: flex;
     flex-direction: column;
-    height: 80vh;
+    min-height: 80vh;
     padding: 2vh 0;
     gap: 10px;
     background-color: #151F32;

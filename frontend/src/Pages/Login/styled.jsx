@@ -9,7 +9,7 @@ export const LoginPageContainer = styled.div`
   background-color: #151F32;
 `;
 
-export const LoginBox = styled.div`
+export const LoginBox = styled.form`
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -35,6 +35,7 @@ export const FormField = styled.div`
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    background-color: #648000;
   }
 `;
 

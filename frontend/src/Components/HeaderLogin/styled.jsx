@@ -6,7 +6,8 @@ export const Cabecalho = styled.header`
     align-items: center;
     padding: 20px;
     background-color: #1B3152;
-    height: 8vh;
+    height: 10vh;
+    
 `
 
 export const LogoHeader = styled.img`

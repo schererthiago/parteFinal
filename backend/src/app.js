@@ -1,24 +1,18 @@
-// Importar o pacote express (servidor)
-const express = require('express');
-// Importar o cors para lidar com requisições externas
-const cors = require('cors');
-// Importar as rotas para serem executadas na aplicação
-const userRouter = require('./routes/userRouter');
+const express         = require('express');
+const cors            = require('cors');
+const app             = express();
+require('dotenv').config();
+const userRouter = require('./routes/usersRouter');
 const loginRouter = require('./routes/loginRouter');
-// Importar o pacote dotenv, gerenciador de variáveis de ambiente
-const dotenv = require('dotenv').config();
+const postRouter = require('./routes/postsRouter');
+const commentRouter   = require('./routes/commentsRouter');
 
-// Instanciar o express na variável app
-const app = express();
-
-// Habilitar o recebimento de requests em formato JSON
+app.use(cors());
 app.use(express.json());
-// Habilitar o uso dos cors no servidor
-app.use(cors())
-// Habilitar as rotas na aplicação
+app.set('port', process.env.PORT);
 app.use('/api', userRouter);
 app.use('/api/auth', loginRouter);
-// Setar a porta do servidor, a parir do arquivo .env
-app.set('port', process.env.PORT || 3333);
+app.use('/api', postRouter);
+app.use('/api', commentRouter);
 
 module.exports = app;

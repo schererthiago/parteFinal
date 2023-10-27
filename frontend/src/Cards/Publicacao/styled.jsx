@@ -9,6 +9,7 @@ export const Container = styled.div`
     height: 40vh;
     border-radius: 10px;
     background: #18273F;
+    /* padding-top: 15; */
 `
 
 export const Barra = styled.div`

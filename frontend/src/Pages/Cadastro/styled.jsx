@@ -36,6 +36,7 @@ export const FormField = styled.div`
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    background-color: #3a3b33;
   }
 `;
 
