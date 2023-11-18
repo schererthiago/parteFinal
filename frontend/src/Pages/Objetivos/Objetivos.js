@@ -1,11 +1,11 @@
 import Footer from "../../Components/Footer/Footer"
-import HeaderLogin from "../../Components/HeaderLogin/HeaderLogin"
+import HeaderLogado from "../../Components/HeaderLogado/HeaderLogado"
 import { Informacoes, Titulo, Texto } from "./styled"
 
 function Objetivos() {
     return (
         <>
-            <HeaderLogin />
+            <HeaderLogado/>
             <Informacoes>
                 <Titulo>Objetivo</Titulo>
                 <Texto>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo architecto voluptatem

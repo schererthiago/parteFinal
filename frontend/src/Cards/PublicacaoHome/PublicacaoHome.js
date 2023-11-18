@@ -2,7 +2,7 @@ import { Publi, Barra, Container, Descricao, FooterCard, ImagemPerfil, InfPerfil
 import ImgPerfil from "../../Assets/fotoPerfil.png"
 import { useNavigate } from "react-router-dom"
 
-function Publicacao(props) {
+function PublicacaoHome(props) {
     const navigate = useNavigate()
 
     const goToDiscussao = () => {
@@ -61,12 +61,9 @@ function Publicacao(props) {
                 <Descricao>
                     {props.conteudo}
                 </Descricao>
-                <FooterCard>
-                    <BotaoVer onClick={() => navigate('/discussao')}>Ver discussão</BotaoVer>
-                </FooterCard>
             </Container>
         </>
     )
 }
 
-export default Publicacao
+export default PublicacaoHome

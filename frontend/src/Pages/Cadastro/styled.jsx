@@ -9,7 +9,7 @@ export const RegisterPageContainer = styled.div`
   background-color: #151F32;
 `;
 
-export const RegisterBox = styled.div`
+export const RegisterBox = styled.form`
   background-color: #fff;
   padding: 20px;
   border-radius: 5px;

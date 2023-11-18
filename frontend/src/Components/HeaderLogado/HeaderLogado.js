@@ -1,20 +1,47 @@
-import { Cabecalho, LogoHeader, Opcoes, Lista, Link, Nav, Botao, BtnPerfil, BtnPubli, BtnSair, BotaoFecharModal, ConteudoModal } from "./styled";
+import { Cabecalho, LogoHeader, Opcoes, Lista, Nav, Botao, BtnPerfil, BtnPubli, BtnSair } from "./styled";
 import Logo from "../../Assets/logo.png";
 import React, { useState } from 'react';
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import PublicarModal from "../PublicarModal/PublicarModal";
 import {
     Modal,
     ModalOverlay,
     ModalContent,
-    ModalHeader,
-    ModalFooter,
-    ModalBody,
-    ModalCloseButton,
 } from '@chakra-ui/react'
 import { useDisclosure } from "@chakra-ui/react";
 
-function HeaderLogado() {
+function HeaderLogado(props) {
     const { isOpen, onOpen, onClose } = useDisclosure()
+
+    const navigate = useNavigate()
+
+    const goToPerfil = () => {
+        navigate('/perfil')
+    }
+
+    const goToSobre = () => {
+        navigate('/sobre')
+    }
+
+    const goToObjetivos = () => {
+        navigate('/objetivos')
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        //pega o id no localhost para identificar o usuário
+        const id = localStorage.getItem('user');
+        if (id) {
+            try {
+                //limpa o localstorage, apaga também o token
+                localStorage.clear()
+                navigate('/')
+            } catch (error) {
+                console.log(error)
+            }
+        }
+    }
 
     return (
         <>
@@ -22,16 +49,12 @@ function HeaderLogado() {
                 <LogoHeader src={Logo} />
                 <Nav>
                     <Opcoes>
-                        <Lista><Link href="#">Sobre</Link>
-                        </Lista>
-                        <Lista>
-                            <Link href="#">Objetivos</Link>
-                        </Lista>
+                        <Lista onClick={() => navigate('/sobre')}>Sobre</Lista>
+                        <Lista onClick={() => navigate('/objetivos')}>Objetivos</Lista>
                     </Opcoes>
                 </Nav>
                 <Botao>
-                    <BtnPerfil>Meu perfil</BtnPerfil>
-
+                    <BtnPerfil onClick={() => navigate('/perfil')}>Meu perfil</BtnPerfil>
                     <BtnPubli onClick={onOpen}>Publicar</BtnPubli>
                     <Modal isOpen={isOpen} onClose={onClose}>
                         <ModalOverlay />
@@ -39,7 +62,7 @@ function HeaderLogado() {
                             <PublicarModal close={onClose} />
                         </ModalContent>
                     </Modal>
-                    <BtnSair>Sair</BtnSair>
+                    <BtnSair onClick={handleSubmit}>Sair</BtnSair>
 
                 </Botao>
             </Cabecalho>

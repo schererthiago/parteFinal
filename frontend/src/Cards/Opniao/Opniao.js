@@ -1,7 +1,16 @@
 import { Publi, Barra, Container, Descricao, FooterCard, ImagemPerfil, InfPerfil, Nome, Perfil, Tempo, BtnResponder } from "./styled";
 import ImgPerfil from "../../Assets/fotoPerfil.png";
+import PublicarModal from "../../Components/PublicarModal/PublicarModal";
+import {
+    Modal,
+    ModalOverlay,
+    ModalContent,
+} from '@chakra-ui/react'
+import { useDisclosure } from "@chakra-ui/react";
 
-const Opniao = () => {
+function Opniao(props) {
+    const { isOpen, onOpen, onClose } = useDisclosure()
+
     return (
         <>
             <Container>
@@ -21,7 +30,13 @@ const Opniao = () => {
                     históricas e promover a representatividade.
                 </Descricao>
                 <FooterCard>
-                    <BtnResponder>Responder</BtnResponder>
+                    <BtnResponder onClick={onOpen}>Responder</BtnResponder>
+                    <Modal isOpen={isOpen} onClose={onClose}>
+                        <ModalOverlay />
+                        <ModalContent>
+                            <PublicarModal close={onClose}/>
+                        </ModalContent>
+                    </Modal>
                 </FooterCard>
             </Container>
         </>

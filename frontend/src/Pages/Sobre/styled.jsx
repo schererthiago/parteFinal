@@ -8,6 +8,7 @@ export const Informacoes = styled.main`
     align-items: center;
     gap: 3vh;
     justify-content: center;
+    background-color: #151F32;
 `
 
 
@@ -17,6 +18,7 @@ export const Titulo = styled.div`
     align-items: center;
     justify-content: center;
     text-align: right;
+    color: white;
 `
 
 export const Texto = styled.div`
@@ -25,4 +27,5 @@ export const Texto = styled.div`
     align-items: center;
     justify-content: center;
     width: 30%;
+    color: white;
 `

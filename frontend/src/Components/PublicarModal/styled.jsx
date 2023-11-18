@@ -18,7 +18,8 @@ export const Conteudo = styled.div`
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 70px;
-  width: 480px;
+  width: 510px;
+  height: 520px;
   text-align: center;
   position: relative;
 `;
@@ -37,7 +38,8 @@ export const Titulo = styled.h2`
 `;
 
 export const Textarea = styled.textarea`
-  width: 100%;
+  width: 22vw;
+  height: 40vh;
   padding: 10px;
   margin: 10px 0;
 `;

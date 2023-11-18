@@ -3,6 +3,7 @@ import { styled } from "styled-components";
 export const Informacoes = styled.main`
     height: 50vh;
     padding: 8vh;
+    background-color: #3b5698;
 `
 
 export const InfosUsuario = styled.div`
@@ -11,6 +12,7 @@ export const InfosUsuario = styled.div`
     border: 1px solid #ccc;
     border-radius: 12px;
     padding: 20px;
+    margin-left: -1080px;
 `
 
 export const ImagemPerfil = styled.img`
@@ -23,4 +25,8 @@ export const ImagemPerfil = styled.img`
 export const Nome = styled.p`
     font-size: 18px;
     font-weight: bold;
+`
+
+export const Abaixo = styled.p`
+    font-size: 20px;
 `

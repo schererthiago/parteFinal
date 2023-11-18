@@ -23,3 +23,5 @@ function Resposta() {
         </>
     )
 }
+
+export default Resposta;

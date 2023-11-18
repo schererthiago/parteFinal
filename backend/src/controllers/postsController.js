@@ -1,10 +1,7 @@
 const connection = require('../config/db');
 
 async function listPosts(request, response) {
-    const query = 'SELECT p.*, (SELECT count(r.post_id) FROM reactions r WHERE r.post_id = p.id ) as likes, ' + 
-    ' (SELECT count(c.post_id) FROM comments c WHERE c.post_id = p.id ) as comments ' +
-    ' FROM posts p ' + 
-    ' GROUP BY p.id ORDER BY p.id DESC';
+    const query = 'SELECT * FROM posts  ';
 
     connection.query(query, (err, results) => {        
         if (results) {
@@ -34,7 +31,7 @@ async function storePost(request, response) {
         request.body.userId,        
     );
     
-    const query = 'INSERT INTO posts(description,user_id) values(?,?);';
+    const query = 'INSERT INTO posts(descricao,user_id) values(?,?);';
 
     connection.query(query, params, (err, results) => {        
         if (results) {

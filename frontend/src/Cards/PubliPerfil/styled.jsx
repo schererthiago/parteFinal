@@ -5,8 +5,8 @@ export const Container = styled.div`
     flex-direction: column;
     padding: 4vh;
     gap: 3.5vh;
-    width: 60vw;
-    height: 33vh;
+    width: 80vw;
+    height: 20vh;
     border-radius: 10px;
     background: #18273F;
     /* padding-top: 15; */
@@ -50,14 +50,15 @@ export const Nome = styled.p`
     margin: 0;
 `
 
-export const Tempo = styled.p`
+export const Apagar = styled.button`
     color: var(--base-mid-gray, #7A757D);
     font-family: Poppins;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    margin: 0;
+    margin-left: auto;
+    margin-right: 0;
 `
 export const Descricao = styled.p`
     color: white;

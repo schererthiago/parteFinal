@@ -6,7 +6,7 @@ export const Container = styled.div`
     padding: 4vh;
     gap: 3.5vh;
     width: 60vw;
-    height: 40vh;
+    height: 26vh;
     border-radius: 10px;
     background: #18273F;
 `

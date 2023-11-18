@@ -29,6 +29,7 @@ export const Opcoes = styled.ul`
 
 export const Lista = styled.li`
     margin-right: 20px;
+    color: white;
 `
 
 export const Link = styled.a`
@@ -38,10 +39,11 @@ export const Link = styled.a`
 `
 
 export const BtnSair = styled.button`
-    padding: 10px 20px;
+    padding: 7px 10px;
     background-color: #007bff;
     color: #fff;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
+    font-size: 12px;
 `

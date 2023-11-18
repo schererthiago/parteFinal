@@ -1,15 +1,16 @@
-import { Informacoes, InfosUsuario, ImagemPerfil, Nome } from "./styled";
+import { Informacoes, InfosUsuario, ImagemPerfil, Nome, Abaixo } from "./styled";
 import ImgPerfil from "../../Assets/fotoPerfil.png";
 
 function InfosPerfil() {
     return(
         <>
-        <Informacoes>
+        {/* <Informacoes> */}
             <InfosUsuario>
             <ImagemPerfil src={ImgPerfil}/>
             <Nome>Fulano</Nome>
+            <Abaixo> minhas publicações ☟</Abaixo>
             </InfosUsuario>
-        </Informacoes>
+        {/* </Informacoes> */}
         </>
     )
 }

@@ -1,53 +1,73 @@
 import React, { useState } from "react";
 import { LoginPageContainer, LoginBox, LoginTitle, FormField, Button } from "./styled";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import { api } from '../../services/api';
+
+
+// function Login(props){
+
+//   const navigate = useNavigate()
+
+//   const goToRegister = ()=>{
+//     navigate('/cadastro')
+//   }
+
+// }
 
 
 const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const[email, setUserEmail] = useState("");
+  const[password, setUserPassword] = useState("");
 
   const navigate = useNavigate()
 
   const goToHome = () => {
-    navigate('homelogado')
+    navigate('/homelogado')
   }
 
-  const handleLogin = () => {
-    console.log(email, password)
+  const goToCadastro =()=>{
+    navigate('/cadastro')
   }
 
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-    const credentials = { email, password }
+    const data = {
+        'email':email,
+        'password':password
+    };
+    try{
+        console.log(data);
+        const response = await api.post('/auth/login', data);
+        
+        console.log(response.data.message);
 
-    axios.post('http://localhost:8000/login', credentials, {
-      headers: {
-        'Content-Type': "aplication/json"
-      }
-    }).then(response => {
-      alert(response.data.message)
-      goToHome()
-    })
-      .catch(error => console.log(error))
+        if (response.data.success) {
+            alert('Login concluído');
+            localStorage.setItem("user", response.data.data.id)
+            goToHome()
+        } else {
+            alert('Não foi possível entrar');
+        }
+           
 
-  }
-
+    } catch(error){
+        console.log(error)
+    }
+}
 
 
   return (
     <LoginPageContainer>
-      <LoginBox onSubmit={handleSubmit}>
+      <LoginBox>
         <LoginTitle>Login</LoginTitle>
         <FormField>
           <label>Email:</label>
           <input
             type="text"
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => setUserEmail(e.target.value)}
           />
         </FormField>
         <FormField>
@@ -55,11 +75,11 @@ const Login = () => {
           <input
             type="password"
             value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={(e) => setUserPassword(e.target.value)}
           />
         </FormField>
-        <Button type="submit">Login</Button>
-        <Button>Criar Conta</Button>
+        <Button onClick={handleSubmit}>Login</Button>
+        <Button onClick={goToCadastro}>Criar Conta</Button>
       </LoginBox>
     </LoginPageContainer>
   );

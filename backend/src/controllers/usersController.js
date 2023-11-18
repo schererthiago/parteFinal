@@ -31,7 +31,7 @@ async function storeUser(request, response) {
         bcrypt.hashSync(request.body.password, 10)
     );
 
-    const query = 'INSERT INTO users(name,email,password) values(?,?,?);';
+    const query = 'INSERT INTO users (name,email,password) values(?,?,?);';
 
     connection.query(query, params, (err, results) => {
         if (results) {

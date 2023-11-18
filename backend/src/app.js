@@ -12,7 +12,7 @@ app.use(express.json());
 app.set('port', process.env.PORT);
 app.use('/api', userRouter);
 app.use('/api/auth', loginRouter);
-app.use('/api', postRouter);
+app.use('/api/post', postRouter);
 app.use('/api', commentRouter);
 
 module.exports = app;

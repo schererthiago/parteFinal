@@ -1,33 +1,56 @@
 import React, { useState } from 'react';
 import { RegisterPageContainer, RegisterBox, RegisterTitle, FormField, RegisterButton } from './styled';
+import { useNavigate } from "react-router-dom";
+import { api } from '../../services/api';
 
 const Cadastro = () => {
-  const [email, setEmail] = useState('');
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const[email, setUserEmail] = useState("");
+  const[password, setUserPassword] = useState("");
+  const[name, setUserName] = useState("");
 
-  const handleRegister = () => {
-    // Implemente a lógica de registro aqui
-  };
+  const navigate = useNavigate();
+  const goToLogin = () =>{
+      navigate('/login')
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+        const data = {
+            email,
+            password,
+            name
+        };
+
+        console.log(data);
+        const response = await api.post('/user/create', data);
+
+        console.log(response.success)
+        if (response.data) {
+            alert('Usuário cadastrado');
+            goToLogin()
+        } else {
+            alert('Não foi possível cadastrar');
+        }   
+}
 
   return (
     <RegisterPageContainer>
-      <RegisterBox>
+      <RegisterBox onSubmit={handleSubmit}>
         <RegisterTitle>Registrar</RegisterTitle>
-        <FormField>
+        <FormField >
           <label>Email:</label>
           <input
             type="text"
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => setUserEmail(e.target.value)}
           />
         </FormField>
         <FormField>
           <label>Nome de Usuário:</label>
           <input
             type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            value={name}
+            onChange={(e) => setUserName(e.target.value)}
           />
         </FormField>
         <FormField>
@@ -35,10 +58,10 @@ const Cadastro = () => {
           <input
             type="password"
             value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={(e) => setUserPassword(e.target.value)}
           />
         </FormField>
-        <RegisterButton onClick={handleRegister}>Registrar</RegisterButton>
+        <RegisterButton>Registrar</RegisterButton>
       </RegisterBox>
     </RegisterPageContainer>
   );

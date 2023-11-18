@@ -29,6 +29,7 @@ export const Opcoes = styled.ul`
 
 export const Lista = styled.li`
     margin-right: 20px;
+    color: white;
 `
 
 export const Link = styled.a`

@@ -2,16 +2,18 @@ import { Cabecalho, LogoHeader, BotaoLogin, BotaoCadastrar, Nav, Botoes, Modal, 
 import Logo from "../../Assets/logo.png";
 import { useNavigate, Link } from "react-router-dom";
 import React, { useState } from 'react';
-import ReactModal from 'react-modal';
-//import LoginModal from "../../Components/LoginModal/LoginModal";
 
-function HeaderLogin() {
-    // const [modalIsOpen, setModalIsOpen] = useState(false);
+function HeaderLogin(props) {
 
-    // const closeModal = () => setModalIsOpen(false);
-    // const openModal = () => setModalIsOpen(true);
+    const navigate = useNavigate()
 
-    // const navigate = useNavigate();
+    const goToLogin = ()=>{
+        navigate('/login')
+
+    const goToRegister = ()=>{
+        navigate('/cadastro')
+    }
+    }
 
     return (
         <>
@@ -20,8 +22,8 @@ function HeaderLogin() {
                 <Nav>
                 </Nav>
                 <Botoes >
-                    <Link to='login'><BotaoLogin>Login</BotaoLogin></Link>
-                    <Link to='cadastro'><BotaoCadastrar>Cadastrar-se</BotaoCadastrar></Link>
+                    <BotaoLogin onClick={()=>navigate('/login')}>Login</BotaoLogin>
+                    <BotaoCadastrar onClick={()=>navigate('/cadastro')}>Cadastrar-se</BotaoCadastrar>
                 </Botoes>
 
             </Cabecalho>
