@@ -8,7 +8,7 @@ function Sobre() {
         <HeaderLogado/>
             <Informacoes>
                 <Titulo>Sobre</Titulo>
-                <Texto>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio voluptate rerum officiis ullam obcaecati illum delectus magni natus suscipit. Aperiam, repellendus iste consequuntur asperiores explicabo vel rem odio inventore incidunt.
+                <Texto>Este fórum é fruto de uma pesquisa de dois anos no Colégio Senac, oferece um ambiente dinâmico onde programadores, pesquisadores e entusiastas da IA tem a oportunidade de colaborar com este espaço. Este é um ambiente onde a diversidade de conhecimento enriquece a comunidade e impulsiona o campo da Inteligência Artificial para novos patamares. Junte-se a nós para explorar, aprender e conectar-se com mentes inovadoras na área da IA!
                 </Texto>
             </Informacoes>
             <Footer/>
