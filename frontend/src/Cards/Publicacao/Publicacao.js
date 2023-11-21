@@ -1,12 +1,14 @@
 import { Publi, Barra, Container, Descricao, FooterCard, ImagemPerfil, InfPerfil, Nome, Perfil, Tempo, BotaoVer } from "./styled"
 import ImgPerfil from "../../Assets/fotoPerfil.png"
 import { useNavigate } from "react-router-dom"
+import { useEffect, useState } from "react"
+import { api } from "../../services/api"
 
 function Publicacao(props) {
     const navigate = useNavigate()
 
     const goToDiscussao = () => {
-        navigate('/discussao')
+        navigate(`/discussao/${props.id}`)
     }
 
     function tempoDecorrido(dataIsoString) {
@@ -46,25 +48,48 @@ function Publicacao(props) {
         }
     }
 
+    const [user, setUser] = useState()
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await api.get(`/user/${props.post.user_id}`);
+
+                if (response.data.success) {
+                    setUser(response.data.data[0])
+                } else {
+                    console.log("Deu errado")
+                }
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        fetchData()
+    }, [props.post.user_id])
+
     return (
         <>
-            <Container>
-                <Barra>
-                    <Perfil>
-                        <ImagemPerfil src={ImgPerfil} />
-                        <InfPerfil>
-                            <Nome>Fulano</Nome>
-                        </InfPerfil>
-                    </Perfil>
-                    <Tempo>{tempoDecorrido(props.criado)}</Tempo>
-                </Barra>
-                <Descricao>
-                    {props.conteudo}
-                </Descricao>
-                <FooterCard>
-                    <BotaoVer onClick={() => navigate('/discussao')}>Ver discussão</BotaoVer>
-                </FooterCard>
-            </Container>
+            {user ? (
+                <Container>
+                    <Barra>
+                        <Perfil>
+                            <ImagemPerfil src={ImgPerfil} />
+                            <InfPerfil>
+                                <Nome>{user.name}</Nome>
+                            </InfPerfil>
+                        </Perfil>
+                        <Tempo>{tempoDecorrido(props.criado)}</Tempo>
+                    </Barra>
+                    <Descricao>
+                        {props.conteudo}
+                    </Descricao>
+                    <FooterCard>
+                        <BotaoVer onClick={goToDiscussao}>Ver discussão</BotaoVer>
+                    </FooterCard>
+                </Container>
+            ) : (
+                <></>
+            )}
         </>
     )
 }

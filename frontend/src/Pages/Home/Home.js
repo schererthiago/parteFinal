@@ -38,7 +38,7 @@ const Home = () => {
             <Publi>
                 <Aviso />
                 {posts.map((post, index) => (
-                    <PublicacaoHome key={index} post={post} conteudo={post.descricao} criado={post.created_at} />
+                    <PublicacaoHome key={index} post={post} id={post.id} conteudo={post.descricao} criado={post.created_at} />
                 ))}
             </Publi>
             <Footer />

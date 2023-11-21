@@ -35,7 +35,7 @@ const Home = () => {
             <HeaderLogado />
             <Publi>
                 {posts.map((post, index) => (
-                    <Publicacao key={index} post={post} conteudo={post.descricao} criado={post.created_at}/>
+                    <Publicacao key={index} post={post} id={post.id} conteudo={post.descricao} criado={post.created_at}/>
                 ))}
             </Publi>
             <Footer />

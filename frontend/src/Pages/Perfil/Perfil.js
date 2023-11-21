@@ -9,11 +9,13 @@ import { api } from "../../services/api";
 
 function Perfil() {
     const [posts, setPosts] = useState([])
+    const idUser = localStorage.getItem("user")
+    const [user, setUser] = useState()
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await api.get('/post/posts');
+                const response = await api.get(`/post/posts/${idUser}`);
 
                 if (response.data) {
                     setPosts(response.data.data)
@@ -29,16 +31,39 @@ function Perfil() {
 
     });
 
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await api.get(`/user/${idUser}`);
+
+                if (response.data.success) {
+                    setUser(response.data.data[0])
+                } else {
+                    console.log("Deu errado")
+                }
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        fetchData()
+    }, [idUser])
+
     return (
         <>
-            <HeaderPerfil />
-            <Publi>
-                <InfosPerfil />
-                {posts.map((post, index) => (
-                    <PubliPerfil key={index} post={post} conteudo={post.descricao} criado={post.created_at} />
-                ))}
-            </Publi>
-            <Footer />
+            {user ? (
+                <>
+                    <HeaderPerfil />
+                    <Publi>
+                        <InfosPerfil user={user} />
+                        {posts.map((post, index) => (
+                            <PubliPerfil key={index} post={post} conteudo={post.descricao} criado={post.created_at} />
+                        ))}
+                    </Publi>
+                    <Footer />
+                </>
+            ) : (
+                <></>
+            )}
         </>
     )
 }

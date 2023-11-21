@@ -3,26 +3,29 @@ import { Modal, Conteudo, CloseButton, Titulo, Textarea, PublishButton } from '.
 import { api } from '../../services/api';
 
 
-const PublicarModal = ({ onPublish }, props) => {
+const ComentarModal = (props) => {
   const [contributionText, setContributionText] = useState('');
   const onClose = props.close
   const idUser = localStorage.getItem("user")
+  const idPost = props.post.id
 
   const handlePublish = async (props) => {
     const data = {
       post: contributionText,
-      userId: idUser
+      idUser: idUser,
+      idPost: idPost
     };
-    
-    const response = await api.post('/post/create', data);
+
+    const response = await api.post('/comment/create', data);
 
     if (response.data.success) {
-      alert('Post Criado');
+      alert('Comentário Criado');
+      setContributionText('')
     } else {
-      alert('Não foi possível criar o post');
+      alert('Não foi possível criar o comentário');
     }
   }
-  
+
   return (
     <Conteudo>
       <Titulo>Contribua através do seu conhecimento com a nossa comunidade</Titulo>
@@ -36,4 +39,4 @@ const PublicarModal = ({ onPublish }, props) => {
   );
 };
 
-export default PublicarModal;
+export default ComentarModal;

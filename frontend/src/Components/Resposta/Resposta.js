@@ -1,25 +1,45 @@
-import { Publi, Barra, Container, Descricao, ImagemPerfil, InfPerfil, Nome, Perfil, Tempo, Titulo } from "./styled";
+import { Barra, Container, Descricao, ImagemPerfil, InfPerfil, Nome, Perfil, Tempo, Titulo } from "./styled";
 import ImgPerfil from "../../Assets/fotoPerfil.png";
+import { useState, useEffect } from "react";
+import { api } from "../../services/api";
 
-function Resposta() {
+function Resposta(props) {
+    const [user, setUser] = useState()
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await api.get(`/user/${props.user}`);
+
+                if (response.data.success) {
+                    setUser(response.data.data[0])
+                } else {
+                    console.log("Deu errado")
+                }
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        fetchData()
+    }, [props.user])
+
     return (
         <>
-            <Container>
-                <Barra>
-                    <Perfil>
-                        <ImagemPerfil src={ImgPerfil} />
-                        <InfPerfil>
-                            <Nome>Fulano</Nome>
-                        </InfPerfil>
-                    </Perfil>
-                </Barra>
-                <Descricao>
-                    Cotas raciais no mundo do trabalho visam promover a inclusão de grupos marginalizados,
-                    mas enfrentam críticas por privilegiar determinados grupos em detrimento de outros.
-                    Defensores destacam sua importância como medida temporária para reparar desigualdades
-                    históricas e promover a representatividade.
-                </Descricao>
-            </Container>
+            {user ? (
+                <Container>
+                    <Barra>
+                        <Perfil>
+                            <ImagemPerfil src={ImgPerfil} />
+                            <InfPerfil>
+                                <Nome>{user.name}</Nome>
+                            </InfPerfil>
+                        </Perfil>
+                    </Barra>
+                    <Descricao>{props.comment}</Descricao>
+                </Container>
+            ) : (
+                <></>
+            )}
         </>
     )
 }

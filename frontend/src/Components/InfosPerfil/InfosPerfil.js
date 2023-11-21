@@ -1,16 +1,14 @@
-import { Informacoes, InfosUsuario, ImagemPerfil, Nome, Abaixo } from "./styled";
+import { InfosUsuario, ImagemPerfil, Nome, Abaixo } from "./styled";
 import ImgPerfil from "../../Assets/fotoPerfil.png";
 
-function InfosPerfil() {
-    return(
+function InfosPerfil(props) {
+    return (
         <>
-        {/* <Informacoes> */}
             <InfosUsuario>
-            <ImagemPerfil src={ImgPerfil}/>
-            <Nome>Fulano</Nome>
-            <Abaixo> minhas publicações ☟</Abaixo>
+                <ImagemPerfil src={ImgPerfil} />
+                <Nome>{props.user.name}</Nome>
+                <Abaixo>Minhas publicações ☟</Abaixo>
             </InfosUsuario>
-        {/* </Informacoes> */}
         </>
     )
 }

@@ -1,6 +1,8 @@
 import { Publi, Barra, Container, Descricao, FooterCard, ImagemPerfil, InfPerfil, Nome, Perfil, Tempo, BotaoVer } from "./styled"
 import ImgPerfil from "../../Assets/fotoPerfil.png"
 import { useNavigate } from "react-router-dom"
+import { useState, useEffect } from "react"
+import { api } from "../../services/api"
 
 function PublicacaoHome(props) {
     const navigate = useNavigate()
@@ -46,22 +48,46 @@ function PublicacaoHome(props) {
         }
     }
 
+    const [user, setUser] = useState()
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await api.get(`/user/${props.post.user_id}`);
+
+                if (response.data.success) {
+                    setUser(response.data.data[0])
+                } else {
+                    console.log("Deu errado")
+                }
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        fetchData()
+    }, [props.post.user_id])
+
+
     return (
         <>
-            <Container>
-                <Barra>
-                    <Perfil>
-                        <ImagemPerfil src={ImgPerfil} />
-                        <InfPerfil>
-                            <Nome>Fulano</Nome>
-                        </InfPerfil>
-                    </Perfil>
-                    <Tempo>{tempoDecorrido(props.criado)}</Tempo>
-                </Barra>
-                <Descricao>
-                    {props.conteudo}
-                </Descricao>
-            </Container>
+            {user ? (
+                <Container>
+                    <Barra>
+                        <Perfil>
+                            <ImagemPerfil src={ImgPerfil} />
+                            <InfPerfil>
+                                <Nome>{user.name}</Nome>
+                            </InfPerfil>
+                        </Perfil>
+                        <Tempo>{tempoDecorrido(props.criado)}</Tempo>
+                    </Barra>
+                    <Descricao>
+                        {props.conteudo}
+                    </Descricao>
+                </Container>
+            ) : (
+                <></>
+            )}
         </>
     )
 }

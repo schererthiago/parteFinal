@@ -20,7 +20,7 @@ function Rotas(){
             <Route path='perfil' element={<Perfil/>}/>
             <Route path='login' element={<Login/>}/>
             <Route path='cadastro' element={<Cadastro/>}/>
-            <Route path='discussao' element={<Discussao/>}/>
+            <Route path='discussao/:id' element={<Discussao/>}/>
         </Routes>
         </BrowserRouter>
     )
